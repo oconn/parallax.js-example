@@ -3,7 +3,6 @@ html {
 }
 
 body {
-  overflow:hidden;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -11,10 +10,10 @@ body {
 }
 
 .page {
-  width: 80%;
-  height: 80%;
-  margin: 10%;
   overflow-y: scroll;
+  width: 70%;
+  height: 80%;
+  margin: 10% 15% 0% 15%;
 }
 
 h1 {
@@ -22,6 +21,26 @@ h1 {
   padding: 0;
   text-align: center;
   color: white;
+}
+
+p {
+  color: #F3F3F3;
+  line-height: 1.2em;
+  letter-spacing: 0.3px;
+}
+
+li {
+  color: #F3F3F3;
+  margin: 1em auto;
+}
+
+a {
+  color: #2ECCFA;
+  text-decoration: none;
+}
+
+.inline-ul li {
+  display: inline-table;  
 }
 
 #main-controls {
@@ -55,7 +74,7 @@ h1 {
 .control {
   position: fixed;
   color: #FCFCFC;
-  opacity: 0.4;
+  opacity: 0.3;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -86,6 +105,8 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  width: 4em;
+  white-space: nowrap;
 }
 
 #bottomControl {
@@ -95,4 +116,25 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  width: 4em;
+  white-space: nowrap;
+}
+
+#tech div {
+  margin-top: 1em;
+  display: inline-table;
+  padding-right: 1em;
+}
+
+#tech div h2 {
+  margin: 0;
+}
+
+#tech div ul {
+  margin-top: 0;
+  display: inline-table;
+}
+
+#tech div ul li {
+  
 }

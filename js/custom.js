@@ -52,7 +52,7 @@ $(document).ready(function () {
   };
 
   parallax.experience.onload = function(){
-    setRight("projects", "Projects");
+    setRight("tech", "Tech Stack")
     setLeft("about", "About Me");
     setBottom("navy", "Navy");
     addControls("home", "contact");
@@ -61,7 +61,7 @@ $(document).ready(function () {
 
   parallax.navy.onload = function(){
     setTop("experience", "Back");
-    setRight("projects", "Projects");
+    setRight("tech", "Tech Stack")
     setLeft("about", "About Me");
     setBottom("devbootcamp", "Dev Bootcamp")
     addControls("home", "contact");
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
   parallax.devbootcamp.onload = function(){
     setTop("navy", "Navy")
-    setRight("projects", "Projects");
+    setRight("tech", "Tech Stack")
     setLeft("about", "About Me"); 
     setBottom("firefly", "Firefly Photography")
     addControls("home", "contact");
@@ -78,19 +78,13 @@ $(document).ready(function () {
 
   parallax.firefly.onload = function(){
     setTop("devbootcamp", "Dev Bootcamp")
-    setRight("projects", "Projects");
+    setRight("tech", "Tech Stack");
     setLeft("about", "About Me"); 
     addControls("home", "contact");
   };
 
-  parallax.projects.onload = function(){
-    setLeft("experience", "Experience");
-    setRight("tech", "Tech Stack");
-    addControls("home", "contact");
-  };
-
   parallax.tech.onload = function(){
-    setLeft("projects", "Projects");
+    setLeft("experience", "Experience");
     setRight("contact", "Contact")
     addControls("home", "contact");
   };
