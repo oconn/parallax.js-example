@@ -15,35 +15,78 @@ $(document).ready(function () {
     }
   });
 
+
   parallax
-      .add($("#index"))
-      .add($("#about"))
-      .add($("#other"));
+    .add($("#home"))
+    .add($("#about"))
+    .add($("#experience"))
+    .add($("#navy"))
+    .add($("#devbootcamp"))
+    .add($("#projects"))
+    .add($("#tech"))
+    .add($("#contact"));
 
   parallax.background = $("body");
-  parallax.scaling = 0.05;
+  parallax.scaling = 0.2;
 
   parallax.preload = function(){
     rightKey = leftKey = topKey = bottomKey = "";
+    $("#main-controls").html("")
     $(".control").hide();
   };
 
   parallax.speed = 1000;
   parallax.easing = 'linear';
   
-  parallax.index.onload = function(){
-    setRight("about", "About");
-    setLeft("about", "About");
+  // Page Controls
+  parallax.home.onload = function(){
+    setRight("about", "About Me");
+    addControls("contact");
   };
 
   parallax.about.onload = function(){
-    setLeft("index", "Index");
-    setBottom("other", "Other");
-    setRight("index", "Index");
+    setLeft("home", "Back");
+    setRight("experience", "Experience");
+    addControls("home", "contact");
   };
 
-  parallax.other.onload = function(){
-    setTop("about", "About"); 
+  parallax.experience.onload = function(){
+    setRight("projects", "Projects");
+    setLeft("about", "About Me");
+    setBottom("navy", "Navy");
+    addControls("home", "contact");
+    
+  };
+
+  parallax.navy.onload = function(){
+    setTop("experience", "Back");
+    setRight("projects", "Projects");
+    setLeft("about", "About Me");
+    setBottom("devbootcamp", "Dev Bootcamp")
+    addControls("home", "contact");
+    
+  };
+
+  parallax.devbootcamp.onload = function(){
+    setTop("navy", "Navy")
+    setRight("projects", "Projects");
+    setLeft("about", "About Me"); 
+    addControls("home", "contact");
+
+  };
+
+  parallax.projects.onload = function(){
+    addControls("home", "contact");
+    
+  };
+
+  parallax.tech.onload = function(){
+    addControls("home", "contact");
+    
+  };
+
+  parallax.contact.onload = function(){
+    addControls("home");
   };
 
   //Sets the correct triggers for the arrows, plus arrow keys
@@ -86,16 +129,25 @@ $(document).ready(function () {
       parallax[page].bottom();
     };
   }
+  
+  function addControls(){
+    for(var i = 0; i < arguments.length; i++){
+      $("#main-controls").append('<a href="#" id="go-' + arguments[i] + '"">' + arguments[i] + '</a>');
+    };
+  };
 
-  $(".control")
-    .mouseenter(function(){
-      $(this).css("opacity", "1.0")
-    })
-    .mouseleave(function(){
-      $(this).css("opacity", "0.4")
-    })
+  // Permanent controls
+  $("body").on("click", "#go-home", function(e){
+    e.preventDefault();
+    parallax["home"].right();
+  });
+
+  $("body").on("click", "#go-contact", function(e){
+    e.preventDefault();
+    parallax["contact"].right();
+  });
   
   $(".control").hide();
-  parallax.index.show();
+  parallax.home.show();
 });
 
