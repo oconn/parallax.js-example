@@ -1,12 +1,7 @@
 var rightKey, leftKey, topKey, bottomKey;
 
 $(document).ready(function () {
-  $(document).keydown(function(key){
-    if (key.keycode === 37) {
-      leftKey();
-    }
-  })
-
+  
   // Set up the triggers for the arrow keys
   $(document).keydown(function(e){
     if (e.keyCode == 37 && typeof leftKey === 'function') {
@@ -26,14 +21,14 @@ $(document).ready(function () {
       .add($("#other"));
 
   parallax.background = $("body");
-  parallax.scaling = 0.1;
+  parallax.scaling = 0.05;
 
   parallax.preload = function(){
     rightKey = leftKey = topKey = bottomKey = "";
     $(".control").hide();
   };
 
-  parallax.speed = 1100;
+  parallax.speed = 1000;
   parallax.easing = 'linear';
   
   parallax.index.onload = function(){
@@ -92,6 +87,15 @@ $(document).ready(function () {
     };
   }
 
+  $(".control")
+    .mouseenter(function(){
+      $(this).css("opacity", "1.0")
+    })
+    .mouseleave(function(){
+      $(this).css("opacity", "0.4")
+    })
+  
+  $(".control").hide();
   parallax.index.show();
 });
 

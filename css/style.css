@@ -26,6 +26,16 @@ h1 {
 
 .control {
   position: fixed;
+  color: #FCFCFC;
+  opacity: 0.4;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.control:hover {
+  opacity: 1;
 }
 
 #leftControl {
@@ -36,6 +46,10 @@ h1 {
 #rightControl {
   right: 0;
   top: 40%;
+}
+
+#leftControl *, #rightControl * {
+  display: inline-table;
 }
 
 #topControl {
