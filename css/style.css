@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-image: url(../img/grey_wash_wall.png);
+  background-image: url(../img/escheresque_ste.png);
 }
 
 .page {
@@ -21,6 +21,10 @@ h1 {
   padding: 0;
   text-align: center;
   color: white;
+}
+
+h2 {
+  color: #F3F3F3;
 }
 
 p {
@@ -68,7 +72,7 @@ a {
 }
 
 #main-controls a:hover {
-  color: black;
+  color: #2ECCFA;
 }
 
 .control {
