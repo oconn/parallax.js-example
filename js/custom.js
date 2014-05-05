@@ -22,6 +22,7 @@ $(document).ready(function () {
     .add($("#experience"))
     .add($("#navy"))
     .add($("#devbootcamp"))
+    .add($("#firefly"))
     .add($("#projects"))
     .add($("#tech"))
     .add($("#contact"));
@@ -71,21 +72,31 @@ $(document).ready(function () {
     setTop("navy", "Navy")
     setRight("projects", "Projects");
     setLeft("about", "About Me"); 
+    setBottom("firefly", "Firefly Photography")
     addControls("home", "contact");
+  };
 
+  parallax.firefly.onload = function(){
+    setTop("devbootcamp", "Dev Bootcamp")
+    setRight("projects", "Projects");
+    setLeft("about", "About Me"); 
+    addControls("home", "contact");
   };
 
   parallax.projects.onload = function(){
+    setLeft("experience", "Experience");
+    setRight("tech", "Tech Stack");
     addControls("home", "contact");
-    
   };
 
   parallax.tech.onload = function(){
+    setLeft("projects", "Projects");
+    setRight("contact", "Contact")
     addControls("home", "contact");
-    
   };
 
   parallax.contact.onload = function(){
+    setLeft("tech", "Tech Stack");
     addControls("home");
   };
 
@@ -132,7 +143,7 @@ $(document).ready(function () {
   
   function addControls(){
     for(var i = 0; i < arguments.length; i++){
-      $("#main-controls").append('<a href="#" id="go-' + arguments[i] + '"">' + arguments[i] + '</a>');
+      $("#main-controls").append('<a href="#" id="go-' + arguments[i] + '"">' + arguments[i].toUpperCase() + '</a>');
     };
   };
 

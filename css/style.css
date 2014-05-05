@@ -24,6 +24,34 @@ h1 {
   color: white;
 }
 
+#main-controls {
+  padding: 1em;
+  display: table;
+  right: 0;
+  position: fixed;
+}
+
+#main-controls a {
+  padding: 1em;
+  line-height: 2em;
+  text-decoration: none;
+  color: #FCFCFC;
+  opacity: 0.4;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#main-controls:hover a {
+  opacity: 1;
+}
+
+#main-controls a:hover {
+  color: black;
+}
+
 .control {
   position: fixed;
   color: #FCFCFC;
